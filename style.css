@@ -1,11 +1,11 @@
 body {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    height: 100vh;
     margin: 0;
     background-color: #f0f0f0;
+    overflow: scroll;
+    font-family: 'Roboto', sans-serif;
 }
 
 .grid-container {
@@ -14,6 +14,9 @@ body {
     grid-template-rows: repeat(16, 1fr);
     background-color: white;
     border: 1px solid #ccc;
+    max-width: 670px;
+    width: 100%;
+    margin: 0;
 }
 
 .square {
@@ -25,6 +28,7 @@ body {
 }
 
 h2 {
+    text-align: center;
     font-size: 32px;
     color: cadetblue;
 }
@@ -33,9 +37,22 @@ h2 {
     display: flex;
     gap:16px;
     align-items: center;
+    justify-content: center;
 }
 
 button {
     height: 100px;
     width: 100px;
 }
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(22, 15, 61);
+    color: rgb(0, 0, 0);
+    padding: 16px;
+    font-size: 32px;
+    font-weight: bold;
+}
+
