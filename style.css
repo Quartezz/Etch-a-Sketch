@@ -4,6 +4,14 @@
     --secondary-light: #fefefe;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 html {
     position: relative;
     min-height: 100%;;
@@ -49,7 +57,7 @@ input {
     gap: 128px;
 }
 
-.settings-container {
+.settings {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -104,13 +112,13 @@ input[type="color"]::-webkit-color-swatch {
 
 input[type="range"] {
     -webkit-apperance: none;
-    background-color: aliceblue;
+    background-color: var(--primary-light);
 }
 
 input[type="range"]::-webkit-slider-runnable-track {
     height: 10px;
-    border: 1px solid darkgray;
-    background-color: aliceblue;
+    border: 1px solid var(--primary-dark);
+    background: var(--primary-light);
     border-radius: 25px;
 }
 
@@ -120,14 +128,15 @@ input[type="range"]::-webkit-slider-thumb {
     width: 24px;
     border-radius: 25px;
     margin-top: -8px;
-    background-color: darkgray;
+    background-color: var(--primary-dark);
 }
 
-.grid-container {
+.grid {
     display: grid;
     width: 500px;
     height: 500px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;;
+    background-color: white;
 }
 
 .square {
