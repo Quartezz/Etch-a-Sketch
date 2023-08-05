@@ -1,69 +1,28 @@
-const gridContainer = document.querySelector('.grid-container');
+const DEFAULT_SIZE = 16;
+const DEFAULT_MODE = 'color';
+const DEFAULT_COLOR = '#333333';
 
-function createGrid(size) {
-    size = Math.min(size, 100);
-    
-    const totalSquares = size * size;
-    const currentSquares = gridContainer.querySelectorAll('.square').length;
+let currentSize = DEFAULT_SIZE;
+let currentColor = DEFAULT_COLOR;
+let currentMode = DEFAULT_MODE;
 
-    
-    const adjustedSquareSize = 100 / size;
-
-    
-    gridContainer.style.gridTemplateColumns = `repeat(${size}, ${adjustedSquareSize}%)`;
-    gridContainer.style.gridTemplateRows = `repeat(${size}, ${adjustedSquareSize}%)`;
-
-
-    if (currentSquares < totalSquares) {
-        for (let i = currentSquares; i < totalSquares; i++) {
-            const square = document.createElement('div');
-            square.classList.add('square');
-            gridContainer.appendChild(square);
-        }
-    } else if (currentSquares > totalSquares) {
-        const squaresToRemove = currentSquares - totalSquares;
-        for (let i = 0; i < squaresToRemove; i++) {
-            gridContainer.removeChild(gridContainer.lastChild);
-        }
-    }
+function setCurrentSize(newSize) {
+    currentSize = newSize;
 }
 
-
-function removeAllSquares() {
-
-    const squares = document.querySelectorAll('.square');
-    squares.forEach(square => {
-        square.remove();
-    });
-
+function setCurrentColor(newColor) {
+    currentColor = newColor;
 }
 
-createGrid(16);
+function setCurrentMode(newMode) {
+    currentMode = newMode;
+}
 
-const squares = document.querySelectorAll('.square');
-const modal = document.getElementById("modal");
-const modalMessage = document.getElementById("modal-message");
-const changeButton = document.getElementById("change");
-let newSize = 0;
-
-const buttons = document.querySelectorAll('button');
-
-
-changeButton.addEventListener('click', () => {
-    newSize = prompt("What is the new grid size? (16-100)")
-    if(newSize >= 16 && newSize <= 100) {
-        removeAllSquares();
-        createGrid(newSize);
-    } else {
-        alert("Please enter a valid size between 16 and 100.")
-    }
-
-})
-
-
-gridContainer.addEventListener('mouseover', (event) => {
-    const target = event.target;
-    if (target.classList.contains('square')) {
-        target.style.backgroundColor = 'black';
-    }
-});
+const grid = document.getElementById('grid');
+const sizeSlider = document.getElementById('sizeSlider');
+const sizeValue = document.getElementById('sizeValue');
+const clearBtn = document.getElementById('clear-button');
+const rainbowBtn = document.getElementById('rainbow-button');
+const eraserBtn = document.getElementById('eraser-button');
+const colorPicker = document.getElementById('colorPicker');
+const colorBtn = document.getElementById('color-button')
