@@ -1,0 +1,23 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    background-color: white;
+    border: 1px solid #ccc;
+}
+
+.square {
+    width: 40px;
+    padding-bottom: 100%; /* Maintain 1:1 aspect ratio for squares */
+    background-color: #ddd;
+    border: 1px solid #ccc;
+}
