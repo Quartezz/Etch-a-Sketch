@@ -1,5 +1,6 @@
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -20,4 +21,21 @@ body {
     padding-bottom: 100%; /* Maintain 1:1 aspect ratio for squares */
     background-color: #ddd;
     border: 1px solid #ccc;
+    transition: background-color 0.1s;
+}
+
+h2 {
+    font-size: 32px;
+    color: cadetblue;
+}
+
+.container {
+    display: flex;
+    gap:16px;
+    align-items: center;
+}
+
+button {
+    height: 100px;
+    width: 100px;
 }
