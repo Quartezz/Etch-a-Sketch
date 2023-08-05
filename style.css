@@ -1,12 +1,19 @@
+:root {
+    --primary-dark: #333;
+    --primary-light: #ededed;
+    --secondary-light: #fefefe;
+}
+
 html {
     position: relative;
     min-height: 100%;;
 }
 
 body {
-    background-color: azure;
-    color: rgb(63, 28, 28);
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
     font-family: 'Roboto', sans-serif;
+    margin-bottom: 100px;
 }
 
 h1 {
@@ -42,7 +49,7 @@ input {
     gap: 128px;
 }
 
-.settings {
+.settings-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -52,14 +59,14 @@ input {
 }
 
 button {
-    border: 1px solid darkgray;
+    border: 1px solid var(--primary-dark);
     border-radius: 10px;
     padding: 10px 20px;
 }
 
 button.active {
-    background-color: darkgray;
-    color: aliceblue;
+    background-color: var(--primary-dark);
+    color: var(--primary-light);
 }
 
 button,
