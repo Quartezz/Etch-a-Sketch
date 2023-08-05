@@ -8,14 +8,35 @@
 </head>
 <body>
 
-    <h2>Etch a Sketch!</h2>
+    <header class="header">
+    <h1 class="title">Etch a Sketch!</h1>
+    </header>
     
-    <div class="container">
+    <main class="main">
+    <div class="settings-container">
+    <input type="color" id="colorPicker" value="#333333">
+    <button id="color-button">Color</button>
+    <button id="rainbow-button">Rainbow mode</button>
+    <button id="eraser-button">Erase</button>
+    <button id="clear-button">Clear All</button>
+    <div id="sizeValue" class="size-value">16 x 16</div>
+    <input type="range" id="slider" value="16" min="1" max="64">
+    </div>
     <div class="grid-container"></div>
-    <button class="size" id="change">Change size of grid!</button>
 </div>
+</main>
+<div class="footer">
 
-<div class="footer">Copyright © 2023 kamilmachel</div>
+<p>
+" Copyright © "
+<script>document.write(new Date().getFullYear())</script>
+"2023 kamilmachel"
+</p>
+
+<a href="https://github.com/Quartezz" target="_blank">
+<i class="fab fa-github" aria-hidden="true">::before</i>
+</a>
+</div>
     <script src="script.js"></script>
 </body>
 </html>
